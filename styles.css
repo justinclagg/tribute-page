@@ -188,7 +188,7 @@ blockquote {
 	height: 50px; /* '.push' must be the same height as 'footer' */
 }
 
-body > footer {
+/*body > footer {
 	height: 50px;
 	opacity: 0.2;
-}
+}*/
