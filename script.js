@@ -1,4 +1,4 @@
-/*eslint-env browser */
+
 document.addEventListener("DOMContentLoaded", function() {
 // Starts script when HTML is loaded and parsed; Not supported before IE9
 	"use strict";
@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		activeDropdown = "physics-dropdown",
 		activeIcon = "physics";
 
-	// Assigns a click event handler to each link that is a child of #tabs
+	// Assigns a click event handler to each link that is a child of #tab-menu
 	// The HTMLCollection is passed as 'this' in order to use an Array.prototype method
-	var tabs = document.getElementById("tabs").getElementsByTagName("a");
+	var tabs = document.getElementById("tab-menu").getElementsByTagName("a");
+
 	Array.prototype.forEach.call(tabs, function addClickEvents(element) {
 		element.addEventListener("click", tabClick);
 	});
@@ -20,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	// The click event handler for each menu tab
 	// 'this' is the element that was clicked
 	function tabClick() {
-		
 		if (menuRaised === false) {
 			// The first tab click raises the menu
 			document.getElementById("menu").classList.add("menu-raised");			
@@ -44,16 +44,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 
-	// Assigns a click event handler to each link that is a child of #work-headings
-	var workHeadings = document.getElementById("work-headings").getElementsByTagName("a");
+	// Assigns a click event handler to each link that is a child of #work-tabs
+	var workHeadings = document.getElementById("work-tabs").getElementsByTagName("a");
+
 	Array.prototype.forEach.call(workHeadings, function addClickEvents(element) {
 		element.addEventListener("click", toggleDropdown);
 	});
 
 	// The click event handler for each dropdown textbox
-	// 'this' is the element that was clicked
 	function toggleDropdown() {
-		
 		if (activeDropdown === false) {
 			// Set the active dropdown and display it
 			activeDropdown = this.id + "-dropdown";

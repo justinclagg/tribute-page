@@ -1,13 +1,3 @@
-/** 
- * To Do:
- *   X Keep page from shifting during tab selection and initial raise-menu animation
- 		- Answer: The scroll bar appears and pushes the page left
- *   ~ Keep current scroll position when changing work tabs
- */
-
-*{
-	margin: 0;
-}
 
 html {
 	height: 100%;
@@ -17,14 +7,14 @@ html {
 body {
 	height: 100%;
 	background-color: #BBB;
+	color: #000;
 	font-family: "Alegreya Sans", sans-serif;
 	font-size: 17px;
-	color: #000;
 }
 
 .wrapper {
 	min-height: 100%;
-	margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -50px auto; /* the bottom margin is the negative value of the footer's height */
 	padding-top: 250px;
 }
 
@@ -35,14 +25,11 @@ body {
 	body > .wrapper > h1 {
 		font-size: 50px;
 	}
-	body > .wrapper > #tabs > ul {
+	body > .wrapper > .tabs > ul {
 		font-size: 30px;
 	}
 	body > .wrapper > .panel {
 		padding: 15px 15px;
-	}
-	body > footer {
-		font-size: 14px;
 	}
 }
 
@@ -50,6 +37,8 @@ a, a:link, a:visited, a:hover, a:active {
 	text-decoration: none;
 	color: #000;
 }
+
+/* Header and Navigation */
 
 h1 {
 	color: #FFF;
@@ -82,24 +71,24 @@ hr {
     animation-fill-mode: forwards;
 }
 
-#tabs ul {
+.tabs ul {
 	font-size: 34px;
 	margin: 0;
 	padding: 0;
 }
 
-#tabs li {
+.tabs li {
 	display: inline-block;
 	color: #FFF;
 	padding: 3px;
 }
 
-#tabs li a {
+.tabs li a {
 	font-weight: 300;
 	color: #FFF;
 }
 
-#tabs li .vr {
+.tabs li .vr {
 	font-weight: 100;
 }
 
@@ -107,14 +96,7 @@ hr {
 	font-weight: 500 !important;
 }
 
-@keyframes fade_in {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
+/* Main panels */
 
 .panel {
 	display: none;
@@ -125,6 +107,15 @@ hr {
 	font-weight: 300;
 	letter-spacing: 0.04em;
 	color: #000;
+}
+
+@keyframes fade_in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .active-panel {
@@ -141,19 +132,21 @@ blockquote {
 	font-style: italic;
 }
 
-#aristotle-portrait {
+.portrait {
 	float: left;
 	text-align: left;
 }
 
-#work-headings {
+/* Work page */
+
+.work-headings {
 	color: #000;
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
 
-#work-headings a,
-#work-headings a:hover {
+.work-headings a,
+.work-headings a:hover {
 	display: inline-block; /* Keeps icon and text on the same line */
 	color: #000;
 	text-decoration: none;
@@ -163,7 +156,7 @@ blockquote {
 	margin-right: 10px;
 }
 
-#work-headings > a > img {
+.work-headings > a > img {
 	border-radius: 50%;
 }
 
@@ -187,8 +180,3 @@ blockquote {
 .push {
 	height: 50px; /* '.push' must be the same height as 'footer' */
 }
-
-/*body > footer {
-	height: 50px;
-	opacity: 0.2;
-}*/
